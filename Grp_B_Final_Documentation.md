@@ -1,17 +1,18 @@
 ﻿# Table of Contents:
-* [Our Purpose](#Our-purpose)
-* [Why we need this product](#why-we-need-this-product)
-* [Ideation](#ideation)
+* [Our Purpose](#our-purpose)
 * [Hardware Used](#hardware-used)
 * [Sodtware Used](#software-used)
+* [Features Added](#features-added)
 * [GUI](#gui)
-* [Block Diagram](#Installation-Process)
-* [Code](#Code)
+* [Installation Process](#installation-process)
+* [Code](#code)
 
 # Our Purpose
 Our group was interested in what different art drawings would sound like. We wanted to create GUI that is able to audibly hear drawings and paintings and have a way to listen to what their own art sounds like.
+
 # Hypothesis 
 The hypothesis of our project is the raspberry pi is able to create a working GUI that has a grid mode that can play different notes in a sequence. Have a draw mode that can accurately represent on the grid.
+
 # Installation Process
 <h2>Step 1: Open terminal and update the Pi using the code below.
 
