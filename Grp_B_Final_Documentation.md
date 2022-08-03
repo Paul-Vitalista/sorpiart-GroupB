@@ -1,4 +1,6 @@
-﻿# Code
+﻿# Our Purpose
+
+# Code
 
 ```
 from  tkinter  import  *
