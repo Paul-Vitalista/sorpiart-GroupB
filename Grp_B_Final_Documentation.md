@@ -10,6 +10,8 @@
 
 # Our Purpose
 Our group was interested in what different art drawings would sound like. We wanted to create GUI that is able to audibly hear drawings and paintings and have a way to listen to what their own art sounds like.
+# Hypothesis 
+Create a working GUI that has a grid mode that can play different notes in a sequence. Have a draw mode that can accurately represent on the grid.
 # Installation Process
 Step 1: Open terminal and update the Pi using the code below.
 ```
