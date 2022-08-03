@@ -11,9 +11,6 @@ import  os
 import  cv2
 import  mediapipe  as  mp
 import  time
-import autopy
-import  pyautogui
-import  subprocess
 ```
 Implementing the toggle function which will activate and change the color of a button when pressed to show whether a button is active or not. 
 ```
