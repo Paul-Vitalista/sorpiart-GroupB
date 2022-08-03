@@ -9,7 +9,7 @@
 * [Code](#Code)
 
 # Our Purpose
-We wanted to create GUI that is able to audibly hear drawings and paintings and have a way to listen to what their own art sounds like.
+Our group was interested in what different art drawings would sound like. We wanted to create GUI that is able to audibly hear drawings and paintings and have a way to listen to what their own art sounds like.
 # Installation Process
 
 # Code
