@@ -25,17 +25,17 @@ sudo apt-get upgrade
 ```
 sudo raspi-config
 ```
-<h2>Go down to Performance Options and hit Enter
+<h2>Go down to Performance Options and hit Enter</h2>
 
 ![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004404511969914921/unknown.png)
-<h2> Then go down to GPU Memory and hit Enter
+<h2> Then go down to GPU Memory and hit Enter</h2>
 
 ![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004404864631189634/unknown.png)
-<h2> Then type in 128 and click Ok and reboot
+<h2> Then type in 128 and click Ok and reboot</h2>
 
 ![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004418923766218782/unknown.png)
 
-<h2> Then proceed to install the required items with the code below
+<h2> Then proceed to install the required items with the code below </h2>
 
 ```
 sudo apt-get install build-essential cmake git unzip pkg-config
@@ -65,7 +65,7 @@ sudo apt-get install gcc-arm*
 sudo apt-get install protobuf-compiler
 ```
 
-<h2>Step 3: Install OpenCV
+<h2>Step 3: Install OpenCV</h2>
 
 
 
