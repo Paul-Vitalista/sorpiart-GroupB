@@ -266,7 +266,6 @@ def move(move_event):
         toggle[i][j]=1
 ```
 *open cam code*
-*open cam code*
 
 
 This will  run the camera function and have it track the hands of the user for 5 seconds
