@@ -67,6 +67,15 @@ sudo apt-get install protobuf-compiler
 
 <h2>Step 3: Install OpenCV</h2>
 
+```
+wget -O opencv.zip https://github.com/opencv/opencv/archive/4.5.5.zip
+
+wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.2.0.zip
+
+unzip opencv.zip
+
+unzip opencv_contrib.zip
+```
 
 
 
