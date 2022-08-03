@@ -13,24 +13,30 @@ Our group was interested in what different art drawings would sound like. We wan
 # Hypothesis 
 The hypothesis of our project is the raspberry pi is able to create a working GUI that has a grid mode that can play different notes in a sequence. Have a draw mode that can accurately represent on the grid.
 # Installation Process
-Step 1: Open terminal and update the Pi using the code below.
+<h2>Step 1: Open terminal and update the Pi using the code below.
+
 ```
 sudo apt-get update
 
 sudo apt-get upgrade
 ```
-Step 2: Ensure the GPU has 128MB of memory
+<h2>Step 2: Ensure the GPU has 128MB of memory
+
 ```
 sudo raspi-config
 ```
-Go down to Performance Options and hit Enter
+<h2>Go down to Performance Options and hit Enter
+
 ![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004404511969914921/unknown.png)
-Then go down to GPU Memory and hit Enter
+<h2> Then go down to GPU Memory and hit Enter
+
 ![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004404864631189634/unknown.png)
-Then type in 128 and click Ok and reboot
+<h2> Then type in 128 and click Ok and reboot
+
 ![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004418923766218782/unknown.png)
 
-Then proceed to install the required items with the code below
+<h2> Then proceed to install the required items with the code below
+
 ```
 sudo apt-get install build-essential cmake git unzip pkg-config
 
@@ -58,15 +64,24 @@ sudo apt-get install gcc-arm*
 
 sudo apt-get install protobuf-compiler
 ```
-=======
+
+<h2>Step 3: Install OpenCV
+
+
+
+
+
+
 
 ## Hardware Used  
-We are using raspberry pi as it uses Linux OS, which is open source, which makes users able to create their own software while still having great security as well as get codes from other sources and it can still be changed to the user's liking. Using Linux Os devices is also more cost efficient in both the hardware and software side as well as less maintenance cost as much as other OS Software. Raspberry Pi also has many component interfaces such as HDMI, Ethernet, Many GPIOs, and USB 2.0 and 3.0.
+- We are using raspberry pi as it uses Linux OS, which is open source, which makes users able to create their own software while still having great security as well as get codes from other sources and it can still be changed to the user's liking. Using Linux Os devices is also more cost efficient in both the hardware and software side as well as less maintenance cost as much as other OS Software. Raspberry Pi also has many component interfaces such as HDMI, Ethernet, Many GPIOs, and USB 2.0 and 3.0.
  
-We  used a monitor for our display out and for the user to see what they are clicking on. And lastly a pair of speakers for the user to be able to hear the sounds that are playing from the notes they clicked on in the program on screen.
+- We  used a monitor for our display out and for the user to see what they are clicking on. And lastly a pair of speakers for the user to be able to hear the sounds that are playing from the notes they clicked on in the program on screen.
 
 ## Software used 
-The main coding platform we are using is Thonny Python IDE. Thonny is useful especially more towards beginners as it is a free integrated development environment. As compared to other coding languages as well as python 3, Thonny is a more suitable coding platform for learning. 
+- The main coding platform we are using is Thonny Python IDE. Thonny is useful especially more towards beginners as it is a free integrated development environment. As compared to other coding languages as well as python 3, Thonny is a more suitable coding platform for learning.
+
+ - For our camera feature, we are using OpenCv for hand tracking. OpenCV is an open source computer vision and machine learning software library. For our purpose, OpenCV is the best machine learning software as compared to other softwares such as tensorflow as OpenCV processes based on images and videos, while tensorflow builds machine learning models and is more used for deep learning applications.
 
 ## Features Added
 - Keyboard Mode
@@ -78,7 +93,7 @@ The main coding platform we are using is Thonny Python IDE. Thonny is useful esp
 - Draw using your own hands
 -- Using a USB webcam, the user will be able to draw shapes or objects using the motion on their hands which will reflect back on the grid and creates a shape that will play a set of sound notes.
 
-  -- This is done by using a software called Opencv, which is an open source computer vision and machine learning program.+
+ 
 
 # Code
 
