@@ -279,13 +279,11 @@ def OpenCam():
     flag = 0
     
     while True:
-        
         c= c+1
         t = goodtracker(a)
 
         if flag == 0:
             print("c is {}".format(c))
-           
             x = t[0]
             y = t[1]
             cx = t[0]
