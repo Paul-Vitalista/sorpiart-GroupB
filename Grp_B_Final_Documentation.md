@@ -13,24 +13,30 @@ Our group was interested in what different art drawings would sound like. We wan
 # Hypothesis 
 The hypothesis of our project is the raspberry pi is able to create a working GUI that has a grid mode that can play different notes in a sequence. Have a draw mode that can accurately represent on the grid.
 # Installation Process
-Step 1: Open terminal and update the Pi using the code below.
+<h2>Step 1: Open terminal and update the Pi using the code below.
+
 ```
 sudo apt-get update
 
 sudo apt-get upgrade
 ```
-Step 2: Ensure the GPU has 128MB of memory
+<h2>Step 2: Ensure the GPU has 128MB of memory
+
 ```
 sudo raspi-config
 ```
-Go down to Performance Options and hit Enter
+<h2>Go down to Performance Options and hit Enter
+
 ![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004404511969914921/unknown.png)
-Then go down to GPU Memory and hit Enter
+<h2> Then go down to GPU Memory and hit Enter
+
 ![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004404864631189634/unknown.png)
-Then type in 128 and click Ok and reboot
+<h2> Then type in 128 and click Ok and reboot
+
 ![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004418923766218782/unknown.png)
 
-Then proceed to install the required items with the code below
+<h2> Then proceed to install the required items with the code below
+
 ```
 sudo apt-get install build-essential cmake git unzip pkg-config
 
@@ -58,6 +64,7 @@ sudo apt-get install gcc-arm*
 
 sudo apt-get install protobuf-compiler
 ```
+Step
 =======
 
 ## Hardware Used  
