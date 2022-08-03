@@ -278,12 +278,12 @@ The grid generation for the GUI to properly align and arrange the button physica
 button = [i for i in range(row)]
 for i in range(row):
     button[i]= [j for j in range(col)]
-   
+
 for i in range(row):
     for j in range(col):
         button[i][j] = Button(frame1, command = lambda hello = [i,j]:btnpress(hello),
                               width=13,pady=17 ,bg="lightgrey",font=("Arial",15))
-        button[i][j].grid(row=i,column=j) 
+button[i][j].grid(row=i,column=j)
 
 ```
 Creating sound array taken from the sound library
