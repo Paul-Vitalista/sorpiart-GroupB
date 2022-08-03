@@ -249,121 +249,94 @@ def preset():
 Gives the grid the number of rows and columns and gives each button its own X and Y value
 ```
 row=15
-
 col=8
 
-toggle  = [i  for  i  in  range(row)]
+toggle = [i for i in range(row)]
+for i in range(row):
+    toggle[i] = [j for j in range(col)]
+for i in range(row):
+    for j in range(col):
+        toggle[i][j] = 0
 
-for  i  in  range(row):
-
-toggle[i] = [j  for  j  in  range(col)]
-
-for  i  in  range(row):
-
-for  j  in  range(col):
-
-toggle[i][j] =  0
+Beat = [i for i in range(1)]
+for i in range(1):
+    Beat[i] = [j for j in range(1)]
+for i in range(1):
+    for j in range(1):
+        Beat[i][j] = 1
 ```
 The grid generation for the GUI to properly align and arrange the button physical position
 ```
-button = [i  for  i  in  range(row)]
+button = [i for i in range(row)]
+for i in range(row):
+    button[i]= [j for j in range(col)]
+   
+for i in range(row):
+    for j in range(col):
+        button[i][j] = Button(frame1, command = lambda hello = [i,j]:btnpress(hello),
+                              width=13,pady=17 ,bg="lightgrey",font=("Arial",15))
+        button[i][j].grid(row=i,column=j) 
 
-for  i  in  range(row):
-
-button[i]= [j  for  j  in  range(col)]
-
-for  i  in  range(row):
-
-for  j  in  range(col):
-
-button[i][j] = Button(main,text=("(",i,",",j,")"), command = lambda  hello = [i,j]:btnpress(hello),
-
-width=5,height=2 ,bg="lightgrey")
-
-button[i][j].grid(row=i,column=j)
 ```
 Creating sound array taken from the sound library
 ```
 option= ["pluck","sine","square","triangle","trapezium","sawtooth"]
-
-variable = StringVar(main)
-
+variable = StringVar(frame1)
 variable.set(option[0])
 
 Noteoption= ["C1","C2","C3","C4","C5","C6"]
-
-Notevariable = StringVar(main)
-
+Notevariable = StringVar(frame1)
 Notevariable.set(Noteoption[3])
 ```
 Creating Slider for BPM taken from the sound library
 ```
-BPM= Scale(main , from_=60, to=180, orient = HORIZONTAL, label = "BPM", font=("Arial",10))
+BPM= Scale(frame1 , from_=60, to=180, orient = HORIZONTAL, label = "BPM", font=("Arial",12))
+BPM.grid(row=0, column=19)
 
-BPM.grid(row=0, column=17)
+BPM2= Scale(frame2 , from_=60, to=180, orient = HORIZONTAL, label = "BPM", font=("Arial",12))
+BPM2.grid(row=0, column=4)
 ``` 
 Creating drop down menu for the sound profile
 ```
-Sound = OptionMenu(main, variable, *option)
-
-Sound.grid(row=2, column=17)
+Sound = OptionMenu(frame1, variable, *option)
+Sound.grid(row=2, column=19)
 ``` 
  Creating drop down menu for which pitch to start at
-```
-Note = OptionMenu(main, Notevariable, *Noteoption)
-
-Note.grid(row=2, column=16)
+Note = OptionMenu(frame1, Notevariable, *Noteoption)
+Note.grid(row=2, column=18)
 ```
 Creating button for activating the preset,  playing sound and clearing for both keyboard and draw modes
 ```	
-preset  =  Button(frame1, text =  "NYP" ,command =  preset, width =10, pady =  19, bg="green",fg="white",font=("Arial",13))
-
+preset = Button(frame1, text = "NYP" ,command = preset, width =10, pady = 19, bg="green",fg="white",font=("Arial",13))
 preset.grid(row=4, column=18)
 
-Play  =  Button(frame1, text =  "Play" ,command =  play, width =10, pady =  19, bg="green",fg="white",font=("Arial",13))
-
+Play = Button(frame1, text = "Play" ,command = play, width =10, pady = 19, bg="green",fg="white",font=("Arial",13))
 Play.grid(row=0, column=18)
 
-Play  =  Button(frame2, text =  "Play" ,command =  play, width =10, pady =  19, bg="green",fg="white",font=("Arial",13))
+Play = Button(frame2, text = "Play" ,command = play2, width =10, pady = 19, bg="green",fg="white",font=("Arial",13))
+Play.grid(row = 0 , column=2)
 
-Play.grid(row =  0 , column=2)
-
-Clear  =  Button(frame1, text=  "Clear", command =  Clear, width =10, pady =  19, bg="red",fg="white",font=("Arial",13))
-
+Clear = Button(frame1, text= "Clear", command = Clear, width =10, pady = 19, bg="red",fg="white",font=("Arial",13))
 Clear.grid(row=1, column=18)
 
-Clear2  =  Button(frame2, text=  "Clear", command =  Clearcanvas, width =10, pady =  19, bg="red",fg="white",font=("Arial",13))
-
+Clear2 = Button(frame2, text= "Clear", command = Clearcanvas, width =10, pady = 19, bg="red",fg="white",font=("Arial",13))
 Clear2.grid(row=0, column=3)
 ```
 To bind the buttons on the GUI to the keyboard button presses
 ```
 main.bind('1',onepressed)
-
 main.bind('2',twopressed)
-
 main.bind('3',threepressed)
-
 main.bind('4',fourpressed)
-
 main.bind('5',fivepressed)
-
 main.bind('6',sixpressed)
-
 main.bind('7',sevenpressed)
-
 main.bind('8',eightpressed)
-
 main.bind('<Down>',downpressed)
-
 main.bind('<Down>',Lightdown)
-
 main.bind('<Up>',uppressed)
-
 main.bind('<Up>',Lightup)
-
 main.bind('<Return>',lambda event:play())
-
 main.bind('<C>',lambda event:Clear())
 ```
 
