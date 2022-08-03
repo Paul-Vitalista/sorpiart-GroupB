@@ -6,7 +6,7 @@
 * [Sodtware Used](#software-used)
 * [GUI](#gui)
 * [Block Diagram](#block-diagram)
-* [Code](#code)
+* [Code](#Code)
 
 # Our Purpose
 
