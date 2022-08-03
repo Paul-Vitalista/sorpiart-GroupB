@@ -23,12 +23,12 @@ Step 2: Ensure the GPU has 128MB of memory
 ```
 sudo raspi-config
 ```
-![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004404511969914921/unknown.png)
 Go down to Performance Options and hit Enter
-![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004404864631189634/unknown.png)
+![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004404511969914921/unknown.png)
 Then go down to GPU Memory and hit Enter
-![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004418923766218782/unknown.png)
+![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004404864631189634/unknown.png)
 Then type in 128 and click Ok and reboot
+![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004418923766218782/unknown.png)
 =======
 
 ## Hardware Used  
