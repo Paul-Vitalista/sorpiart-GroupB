@@ -337,10 +337,65 @@ def OpenCam():
 ```
 
 *start code*
+This will start the Stopwatch timer and also reset any previous time on the lable to zero
+```
+def start():
+    global running, toggle, button,h,a,colorRow,canvas
+    canvas.delete("all")
+    for i in range(row):
+        for j in range(col):
+            toggle[i][j] = 0
+            button[i][j].config(bg="lightgrey")
+    print("toggle is {}".format(toggle))
+    if not running:
+        update()
+        running = True
+    else:
+        stopwatch_label.after_cancel(update_time)
+        running = True
+        update()
+    # set variables back to zero
+    global hours, minutes, seconds
+    hours, minutes, seconds = 0, 0, 0
+    # set label back to zero
+    stopwatch_label.config(text='00:00:00')
+```
 
 *pause code*
-
+This will pause the stopwatch timer in the middle of it's counting
+```
+def pause():
+    global running
+    if running:
+        # cancel updating of time using after_cancel()
+        stopwatch_label.after_cancel(update_time)
+        running = False
+```
 *update code*
+This will update the stopwatch timer for each second pass, it will also reflect the changes in time on a lable every seconds
+```
+def update():
+    # update seconds with (addition) compound assignment operator
+    global hours, minutes, seconds
+    seconds += 1
+    if seconds == 60:
+        minutes += 1
+        seconds = 0
+    if minutes == 60:
+        hours += 1
+        minutes = 0
+    # format time to include leading zeros
+    hours_string = f'{hours}' if hours > 9 else f'0{hours}'
+    minutes_string = f'{minutes}' if minutes > 9 else f'0{minutes}'
+    seconds_string = f'{seconds}' if seconds > 9 else f'0{seconds}'
+    # update timer label after 1000 ms (1 second)
+    stopwatch_label.config(text=hours_string + ':' + minutes_string + ':' + seconds_string)
+    # after each second (1000 milliseconds), call update function
+    # use update_time variable to cancel or pause the time using after_cancel
+    global update_time
+    update_time = stopwatch_label.after(1000, update)
+```
+
 
 Creates a preset for the users to replicate as fast as they can
 ```
