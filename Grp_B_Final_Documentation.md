@@ -286,6 +286,20 @@ for i in range(row):
 button[i][j].grid(row=i,column=j)
 
 ```
+Color row
+```
+colorRow = [i for i in range(15)]
+for i in range(15):
+    colorRow[i]= [j for j in range(1)]
+   
+for i in range(15):
+    for j in range(1):
+        colorRow[i][j] = Button(frame1, command = lambda hello = [i,j]:Lightup(hello),
+                              width=13,pady=21 ,bg="grey")
+        colorRow[i][j].grid(row=i,column=17)
+        colorRow[i][j].invoke()
+```
+
 Creating sound array taken from the sound library
 ```
 option= ["pluck","sine","square","triangle","trapezium","sawtooth"]
