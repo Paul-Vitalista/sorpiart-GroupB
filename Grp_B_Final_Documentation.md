@@ -337,7 +337,6 @@ main.bind('<Down>',Lightdown)
 main.bind('<Up>',uppressed)
 main.bind('<Up>',Lightup)
 main.bind('<Return>',lambda event:play())
-main.bind('<C>',lambda event:Clear())
 ```
 
 
