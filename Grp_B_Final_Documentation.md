@@ -5,12 +5,24 @@
 * [Hardware Used](#hardware-used)
 * [Sodtware Used](#software-used)
 * [GUI](#gui)
-* [Block Diagram](#block-diagram)
+* [Block Diagram](#Installation-Process)
 * [Code](#Code)
 
 # Our Purpose
 Our group was interested in what different art drawings would sound like. We wanted to create GUI that is able to audibly hear drawings and paintings and have a way to listen to what their own art sounds like.
 # Installation Process
+Step 1: Open terminal and update the Pi using the code below.
+```
+sudo apt-get update
+
+sudo apt-get upgrade
+```
+Step 2: Ensure the GPU has 128MB of memory
+```
+sudo raspi-config
+```
+![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004404511969914921/unknown.png)
+Go down to Performance Options and hit Enter
 
 # Code
 
@@ -343,61 +355,27 @@ button[i][j].config(bg="lightgrey")
 
 Creates a preset for the users to replicate as fast as they can
 ```
-def  preset():
-
-global  toggle,button,h,Button
-
-toggle  = [[1, 0, 0, 1, 0, 0, 0, 0],
-
-[1, 1, 0, 1, 0, 0, 0, 0],
-
-[1, 0, 1, 1, 0, 0, 0, 0],
-
-[1, 0, 0, 1, 0, 0, 0, 0],
-
-[0, 0, 0, 0, 0, 0, 0, 0],
-
-[0, 1, 0, 0, 0, 1, 0, 0],
-
-[0, 0, 1, 0, 1, 0, 0, 0],
-
-[0, 0, 0, 1, 0, 0, 0, 0],
-
-[0, 0, 0, 1, 0, 1, 1, 1],
-
-[0, 0, 0, 1, 0, 1, 0, 1],
-
-[0, 0, 0, 1, 0, 1, 1, 1],
-
-[0, 0, 0, 0, 0, 1, 0, 0],
-
-[0, 0, 0, 0, 0, 1, 0, 0],
-
-[0, 0, 0, 0, 0, 1, 0, 0],
-
-[0, 0, 0, 0, 0, 0, 0, 0]]
-
-button[0][0].config(bg="green")
-
-button[1][0].config(bg="green")
-
-button[2][0].config(bg="green")
-
-button[3][0].config(bg="green")
-
-button[1][1].config(bg="green")
-
-button[2][2].config(bg="green")
-
-button[0][3].config(bg="green")
-
-button[1][3].config(bg="green")
-
-button[2][3].config(bg="green")
-
-button[3][3].config(bg="green")
-
-print("button is {}".format(button))
+def preset():
+    global toggle,button,h,Button
+    toggle = [[1, 0, 0, 1, 0, 0, 0, 0],
+              [1, 1, 0, 1, 0, 0, 0, 0],
+              [1, 0, 1, 1, 0, 0, 0, 0],
+              [1, 0, 0, 1, 0, 0, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0],
+              [0, 1, 0, 0, 0, 1, 0, 0],
+              [0, 0, 1, 0, 1, 0, 0, 0],
+              [0, 0, 0, 1, 0, 0, 0, 0],
+              [0, 0, 0, 1, 0, 1, 1, 1],
+              [0, 0, 0, 1, 0, 1, 0, 1],
+              [0, 0, 0, 1, 0, 1, 1, 1],
+              [0, 0, 0, 0, 0, 1, 0, 0],
+              [0, 0, 0, 0, 0, 1, 0, 0],
+              [0, 0, 0, 0, 0, 1, 0, 0],
+              [0, 0, 0, 0, 0, 0, 0, 0]]
+    preset_row = [0,1,2,3,1,2,0,1,2,3,5,5,6,6,7,8,9,10,11,8,8,8,9,9,10,10,10,11,12,13]
+    preset_col =[0,0,0,0,1,2,3,3,3,3,1,5,2,4,3,3,3,3,3,7,6,5,7,5,7,6,5,5,5,5]
+    for i in range(len(preset_row)):
+        button[preset_row[i]][preset_col[i]].config(bg = "green")
 ```
 Gives the grid the number of rows and columns and gives each button its own X and Y value
 ```
