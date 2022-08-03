@@ -395,8 +395,29 @@ def preset():
     for i in range(len(preset_row)):
         button[preset_row[i]][preset_col[i]].config(bg = "green")
 ```
-Gives the grid the number of rows and columns and gives each button its own X and Y value
+Creating the Tkinter pop up and making the window have 2 tabs, also set a to 0
 ```
+main = Tk()
+
+my_notebook = ttk.Notebook(main)
+my_notebook.grid()
+
+frame1 = Frame(my_notebook)
+frame2 = Frame(my_notebook)
+
+frame1.grid()
+frame2.grid()
+
+my_notebook.add(frame1, text="Keyboard Mode")
+my_notebook.add(frame2, text="Draw Mode")
+
+a=0
+```
+
+
+Gives the grid the number of rows and columns and gives each button its own X and Y value. 
+```
+
 row=15
 col=8
 
