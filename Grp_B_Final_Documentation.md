@@ -23,9 +23,9 @@ Step 2: Ensure the GPU has 128MB of memory
 ```
 sudo raspi-config
 ```
-![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004404511969914921/unknown.png)
+![enter image description here]()
 Go down to Performance Options and hit Enter
-
+![enter image description here]()
 # Code
 
 ```
@@ -40,308 +40,175 @@ import  time
 ```
 Implementing the toggle function which will activate and change the color of a button when pressed to show whether a button is active or not. 
 ```
-def  btnpress(h):
+def btnpress(h):
+    global toggle, button
+    i = h[0]; j = h[1]
+    print("i is {} and j is {}".format(i,j))
+    if toggle[i][j]==0:
+        toggle[i][j]=1
+        button[i][j].config(bg="green")
+    else:
+        toggle[i][j]=0
+        button[i][j].config(bg="lightgrey")
 
-global  toggle, button
-
-i  = h[0]; j  = h[1]
-
-print("i is {} and j is {}".format(i,j))
-
-if  toggle[i][j]==0:
-
-toggle[i][j]=1
-
-button[i][j].config(bg="green")
-
-print("ON button is {}".format(button))
-
-else:
-
-toggle[i][j]=0
-
-button[i][j].config(bg="lightgrey")
-
-print("OFF toggle is {}".format(toggle))
 ```
 
 This implements a function that highlights a box in yellow to indicate which row you are on
 ```
-def  Lightdown(h):
-
-global  a
-
-if  a==0:
-
-colorRow[0][0].config(bg="yellow")
-
-else:
-
-colorRow[0][0].config(bg="grey")
-
-if  a==a  and  a  !=  14:
-
-colorRow[a][j].config(bg="grey")
-
-a=a+1
-
-colorRow[a][j].config(bg="yellow")
-
-else:
-
-a=14
-
-colorRow[a][j].config(bg="yellow")
-
-def  Lightup(h):
-
-global  a
-
-if  a==a  and  a  !=0:
-
-colorRow[a][j].config(bg="grey")
-
-a=a-1
-
-colorRow[a][j].config(bg="yellow")
-
-else:
-
-a=0
-
-colorRow[a][j].config(bg="yellow")
+def Lightdown(h):
+    global a
+    if a==0:
+        colorRow[0][0].config(bg="yellow")
+    else:
+        colorRow[0][0].config(bg="grey")
+        
+    if a==a and a != 14:
+        colorRow[a][j].config(bg="grey")
+        a=a+1
+        colorRow[a][j].config(bg="yellow")
+    else:
+        a=14
+        colorRow[a][j].config(bg="yellow")
+def Lightup(h):
+    global a
+    if a==a and a !=0:
+        colorRow[a][j].config(bg="grey")
+        a=a-1
+        colorRow[a][j].config(bg="yellow")
+    else:
+        a=0
+        colorRow[a][j].config(bg="yellow")
 ```
 
 This defines the button presses using the up and down arrow keys
 ```
-def  downpressed (event):
-
-global  h,toggle,button,a
-
-if  a==a  and  a  !=  14:
-
-a=a+1
-
-else:
-
-a=14
-
-def  uppressed (event):
-
-global  h,toggle,button,a
-
-if  a==a  and  a  !=  0:
-
-a=a-1
-
-else:
-
-a=0
+def downpressed (event):
+    global h,toggle,button,a
+    if a==a and a != 14:
+        a=a+1
+    else:
+        a=14
+def uppressed (event):
+    global h,toggle,button,a
+    if a==a and a != 0:
+        a=a-1  
+    else:
+        a=0
 ```
 This creates the function to take the input from pressing the numbers 1-8 on the keyboard
 ```
-def  onepressed (event):
-
-global  h,toggle,button,a
-
-h=[a,0]
-
-i  =  h[0]; j  =  h[1]
-
-if  toggle[i][j]==0:
-
-toggle[i][j]=1
-
-button[i][j].config(bg="green")
-
-else:
-
-toggle[i][j]=0
-
-button[i][j].config(bg="lightgrey")
-
-def  twopressed (event):
-
-global  h,toggle,button,a
-
-h=[a,1]
-
-i  =  h[0]; j  =  h[1]
-
-if  toggle[i][j]==0:
-
-toggle[i][j]=1
-
-button[i][j].config(bg="green")
-
-else:
-
-toggle[i][j]=0
-
-button[i][j].config(bg="lightgrey")
-
-def  threepressed (event):
-
-global  h,toggle,button,a
-
-h=[a,2]
-
-i  =  h[0]; j  =  h[1]
-
-if  toggle[i][j]==0:
-
-toggle[i][j]=1
-
-button[i][j].config(bg="green")
-
-else:
-
-toggle[i][j]=0
-
-button[i][j].config(bg="lightgrey")
-
-def  fourpressed (event):
-
-global  h,toggle,button,a
-
-h=[a,3]
-
-i  =  h[0]; j  =  h[1]
-
-if  toggle[i][j]==0:
-
-toggle[i][j]=1
-
-button[i][j].config(bg="green")
-
-else:
-
-toggle[i][j]=0
-
-button[i][j].config(bg="lightgrey")
-
-def  fivepressed (event):
-
-global  h,toggle,button
-
-h=[a,4]
-
-i  =  h[0]; j  =  h[1]
-
-if  toggle[i][j]==0:
-
-toggle[i][j]=1
-
-button[i][j].config(bg="green")
-
-else:
-
-toggle[i][j]=0
-
-button[i][j].config(bg="lightgrey")
-
-def  sixpressed (event):
-
-global  h,toggle,button
-
-h=[a,5]
-
-i  =  h[0]; j  =  h[1]
-
-if  toggle[i][j]==0:
-
-toggle[i][j]=1
-
-button[i][j].config(bg="green")
-
-else:
-
-toggle[i][j]=0
-
-button[i][j].config(bg="lightgrey")
-
-def  sevenpressed (event):
-
-global  h,toggle,button
-
-h=[a,6]
-
-i  =  h[0]; j  =  h[1]
-
-if  toggle[i][j]==0:
-
-toggle[i][j]=1
-
-button[i][j].config(bg="green")
-
-else:
-
-toggle[i][j]=0
-
-button[i][j].config(bg="lightgrey")
-
-def  eightpressed (event):
-
-global  h,toggle,button
-
-h=[a,7]
-
-i  =  h[0]; j  =  h[1]
-
-if  toggle[i][j]==0:
-
-toggle[i][j]=1
-
-button[i][j].config(bg="green")
-
-else:
-
-toggle[i][j]=0
-
-button[i][j].config(bg="lightgrey")
+def onepressed (event):
+    global h,toggle,button,a
+    h=[a,0]
+    i = h[0]; j = h[1]
+    if toggle[i][j]==0:
+        toggle[i][j]=1
+        button[i][j].config(bg="green")
+    else:
+        toggle[i][j]=0
+        button[i][j].config(bg="lightgrey")
+def twopressed (event):
+    global h,toggle,button,a
+    h=[a,1]
+    i = h[0]; j = h[1]
+    if toggle[i][j]==0:
+        toggle[i][j]=1
+        button[i][j].config(bg="green")
+    else:
+        toggle[i][j]=0
+        button[i][j].config(bg="lightgrey")
+def threepressed (event):
+    global h,toggle,button,a
+    h=[a,2]
+    i = h[0]; j = h[1]
+    if toggle[i][j]==0:
+        toggle[i][j]=1
+        button[i][j].config(bg="green")
+    else:
+        toggle[i][j]=0
+        button[i][j].config(bg="lightgrey")
+def fourpressed (event):
+    global h,toggle,button,a
+    h=[a,3]
+    i = h[0]; j = h[1]
+    if toggle[i][j]==0:
+        toggle[i][j]=1
+        button[i][j].config(bg="green")
+    else:
+        toggle[i][j]=0
+        button[i][j].config(bg="lightgrey")
+def fivepressed (event):
+    global h,toggle,button
+    h=[a,4]
+    i = h[0]; j = h[1]
+    if toggle[i][j]==0:
+        toggle[i][j]=1
+        button[i][j].config(bg="green")
+    else:
+        toggle[i][j]=0
+        button[i][j].config(bg="lightgrey")
+def sixpressed (event):
+    global h,toggle,button
+    h=[a,5]
+    i = h[0]; j = h[1]
+    if toggle[i][j]==0:
+        toggle[i][j]=1
+        button[i][j].config(bg="green")
+    else:
+        toggle[i][j]=0
+        button[i][j].config(bg="lightgrey")
+def sevenpressed (event):
+    global h,toggle,button
+    h=[a,6]
+    i = h[0]; j = h[1]
+    if toggle[i][j]==0:
+        toggle[i][j]=1
+        button[i][j].config(bg="green")
+    else:
+        toggle[i][j]=0
+        button[i][j].config(bg="lightgrey")
+def eightpressed (event):
+    global h,toggle,button
+    h=[a,7]
+    i = h[0]; j = h[1]
+    if toggle[i][j]==0:
+        toggle[i][j]=1
+        button[i][j].config(bg="green")
+    else:
+        toggle[i][j]=0
+        button[i][j].config(bg="lightgrey")
 ```
 Takes the different Sounds from the sound library from pix2music file and implements the sounds into the program which can be played when selected
 ```
-def  play():
+def play():
+    global toggle, button,h,a,colorRow
+    pix2music(variable.get(), BPM.get(), Notevariable.get() , toggle)
 
-global  toggle, button,h,a,colorRow
-
-pix2music(variable.get(), BPM.get(), Notevariable.get() , toggle)
+def play2():
+    global toggle, button,h,a,colorRow
+    pix2music(variable.get(), BPM2.get(), Notevariable.get() , toggle)
 ```
 Creates a clear function for the keyboard page
 ```
-def  Clear ():
-
-global  toggle, button,h,a,colorRow,canvas
-
-canvas.delete("all")
-
-for  i  in  range(row):
-
-for  j  in  range(col):
-
-toggle[i][j] =  0
-
-button[i][j].config(bg="lightgrey")
-
-print("toggle is {}".format(toggle))
+def Clear ():
+    global toggle, button,h,a,colorRow,canvas
+    canvas.delete("all")
+    for i in range(row):
+        for j in range(col):
+            toggle[i][j] = 0
+            button[i][j].config(bg="lightgrey")
+    print("toggle is {}".format(toggle))
 ```
 
 Creates a clear function for the drawing page
 ```
-def  Clearcanvas():
-
-global  toggle, button,h,a,colorRow,canvas,updatecanvas
-
-canvas.delete("all")
-
-for  i  in  range(row):
-
-for  j  in  range(col):
-
-toggle[i][j] =  0
-
-button[i][j].config(bg="lightgrey")
+def Clearcanvas():
+    global toggle, button,h,a,colorRow,canvas,updatecanvas
+    canvas.delete("all")
+    for i in range(row):
+        for j in range(col):
+            toggle[i][j] = 0
+            button[i][j].config(bg="lightgrey")
 ```
 *click code*
 
