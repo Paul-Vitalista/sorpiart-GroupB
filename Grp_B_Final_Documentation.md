@@ -266,7 +266,78 @@ def move(move_event):
         toggle[i][j]=1
 ```
 *open cam code*
+*open cam code*
 
+
+This will  run the camera function and have it track the hands of the user for 5 seconds
+every 1 second there will be a sound played by the speakers to represent that the camera have taken a picture of your current location of user hands and input it as 1 X & Y coordinates repeated 5 times to draw 5 lines in a continuous line
+```
+def OpenCam():
+    global prev, toggle,button,row,col,cx,cy,move_event,e,f,Beat
+    z=1
+    a=1
+    c=0
+    flag = 0
+    
+    while True:
+        
+        c= c+1
+        t = goodtracker(a)
+
+        if flag == 0:
+            print("c is {}".format(c))
+           
+            x = t[0]
+            y = t[1]
+            cx = t[0]
+            cy = t[1]
+            flag = 1; print("Flag is {}".format(flag));
+            cxp = cx
+            cyp = cy
+        else:
+            time.sleep(0.5)
+            x = cxp
+            y = cyp
+            cx = t[0]
+            cy = t[1]
+            cxp = cx
+            cyp = cy
+            print("Flag is {}".format(flag))
+        print("x is {} and y is {}".format(x,y))
+        print("cx is {} and cy is {}".format(cx,cy))
+        canvas.create_line(x,y,cx,cy,width=2)
+        canvasx = int(x/152) 
+        canvasy = int(y/62)
+            #y = width
+            #x = height
+        h = [canvasy, canvasx]
+        i = h[0]; j = h[1]
+        print("canx is {} and cany is {}".format(j,i))
+        if toggle[i][j]== 0:
+            toggle[i][j]=1
+            button[i][j].config(bg="green")
+        else:
+            toggle[i][j]=1
+        if c == 0:
+            pix2music("Pluck", 180, "C4",Beat)
+        elif c == 1:
+            time.sleep(1)
+            pix2music("Pluck", 180, "C4",Beat)
+        elif c == 2:
+            time.sleep(1)
+            pix2music("Pluck", 180, "C4",Beat)
+        elif c == 3:
+            time.sleep(1)
+            pix2music("Pluck", 180, "C4",Beat)
+        elif c == 4:
+            time.sleep(1)
+            pix2music("Pluck", 180, "C4",Beat)
+        elif c == 5:
+            time.sleep(1)
+            pix2music("Pluck", 180, "C4",Beat)
+        else:
+            return
+```
 
 *start code*
 
