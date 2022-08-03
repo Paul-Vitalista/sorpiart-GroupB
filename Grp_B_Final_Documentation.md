@@ -23,10 +23,17 @@ Step 2: Ensure the GPU has 128MB of memory
 ```
 sudo raspi-config
 ```
-![enter image description here]()
+![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004404511969914921/unknown.png)
 Go down to Performance Options and hit Enter
+
+![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004404864631189634/unknown.png)
+Then go down to GPU Memory and hit Enter
+![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004418923766218782/unknown.png)
+Then type in 128 and click Ok and reboot
+=======
 ![enter image description here]()
 
+>>>>>>> fb57e3973f5e9b8a3a9ebcb16f459181ebf690e4
 ## Hardware Used  
 We are using raspberry pi as it uses Linux OS, which is open source, which makes users able to create their own software while still having great security as well as get codes from other sources and it can still be changed to the user's liking. Using Linux Os devices is also more cost efficient in both the hardware and software side as well as less maintenance cost as much as other OS Software. Raspberry Pi also has many component interfaces such as HDMI, Ethernet, Many GPIOs, and USB 2.0 and 3.0.
  
@@ -262,75 +269,8 @@ def move(move_event):
         toggle[i][j]=1
 ```
 *open cam code*
-This will  run the camera function and have it track the hands of the user for 5 seconds
-every 1 second there will be a sound played by the speakers to represent that the camera have taken a picture of your current location of user hands and input it as 1 X & Y coordinates repeated 5 times to draw 5 lines in a continuous line
-```
-def OpenCam():
-    global prev, toggle,button,row,col,cx,cy,move_event,e,f,Beat
-    z=1
-    a=1
-    c=0
-    flag = 0
-    
-    while True:
-        
-        c= c+1
-        t = goodtracker(a)
 
-        if flag == 0:
-            print("c is {}".format(c))
-           
-            x = t[0]
-            y = t[1]
-            cx = t[0]
-            cy = t[1]
-            flag = 1; print("Flag is {}".format(flag));
-            cxp = cx
-            cyp = cy
-        else:
-            time.sleep(0.5)
-            x = cxp
-            y = cyp
-            cx = t[0]
-            cy = t[1]
-            cxp = cx
-            cyp = cy
-            print("Flag is {}".format(flag))
-        print("x is {} and y is {}".format(x,y))
-        print("cx is {} and cy is {}".format(cx,cy))
-        canvas.create_line(x,y,cx,cy,width=2)
-        canvasx = int(x/152) 
-        canvasy = int(y/62)
-            #y = width
-            #x = height
-        h = [canvasy, canvasx]
-        i = h[0]; j = h[1]
-        print("canx is {} and cany is {}".format(j,i))
-        if toggle[i][j]== 0:
-            toggle[i][j]=1
-            button[i][j].config(bg="green")
-        else:
-            toggle[i][j]=1
-        if c == 0:
-            pix2music("Pluck", 180, "C4",Beat)
-        elif c == 1:
-            time.sleep(1)
-            pix2music("Pluck", 180, "C4",Beat)
-        elif c == 2:
-            time.sleep(1)
-            pix2music("Pluck", 180, "C4",Beat)
-        elif c == 3:
-            time.sleep(1)
-            pix2music("Pluck", 180, "C4",Beat)
-        elif c == 4:
-            time.sleep(1)
-            pix2music("Pluck", 180, "C4",Beat)
-        elif c == 5:
-            time.sleep(1)
-            pix2music("Pluck", 180, "C4",Beat)
-        else:
-            return
-```
+
 *start code*
 
 *pause code*
