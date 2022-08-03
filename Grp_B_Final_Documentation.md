@@ -1,4 +1,16 @@
-﻿# Our Purpose
+﻿# Table of Contents:
+* [Our Purpose](#Our-purpose)
+* [Why we need this product](#why-we-need-this-product)
+* [Ideation](#ideation)
+* [Hardware Used](#hardware-used)
+* [Sodtware Used](#software-used)
+* [GUI](#gui)
+* [Block Diagram](#block-diagram)
+* [Code](#code)
+
+# Our Purpose
+
+# Installation Process
 
 # Code
 
