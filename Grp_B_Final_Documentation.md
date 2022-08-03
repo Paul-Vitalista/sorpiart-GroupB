@@ -286,7 +286,7 @@ for i in range(row):
 button[i][j].grid(row=i,column=j)
 
 ```
-Color row
+The grid for the yellow button to show the user what row they are on
 ```
 colorRow = [i for i in range(15)]
 for i in range(15):
