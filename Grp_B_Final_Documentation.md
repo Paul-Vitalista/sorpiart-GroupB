@@ -500,7 +500,8 @@ Creating drop down menu for the sound profile
 Sound = OptionMenu(frame1, variable, *option)
 Sound.grid(row=2, column=19)
 ``` 
- Creating drop down menu for which pitch to start at
+Creating drop down menu for which pitch to start at
+
 ```
 Note = OptionMenu(frame1, Notevariable, *Noteoption)
 Note.grid(row=2, column=18)
