@@ -13,6 +13,15 @@ Our group was interested in what different art drawings would sound like. We wan
 # Hypothesis 
 The hypothesis of our project is the raspberry pi is able to create a working GUI that has a grid mode that can play different notes in a sequence. Have a draw mode that can accurately represent on the grid.
 
+# GUI
+<h2>Keyboard Mode</h2>
+
+![Keyboard Mode GUI](https://media.discordapp.net/attachments/965809568808575027/1004398042348257291/Annotation_Keyboard_Mode.png?width=1215&height=587)
+
+<h2>Draw Mode</h2>
+
+![Drawing Mode GUI](https://media.discordapp.net/attachments/965809568808575027/1004398042834813088/Annotation_Draw_Mode.png?width=1014&height=597)
+
 # Installation Process
 <h2>Step 1: Open terminal and update the Pi using the code below.
 
@@ -28,13 +37,13 @@ sudo raspi-config
 ```
 <h2>Go down to Performance Options and hit Enter</h2>
 
-![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004404511969914921/unknown.png)
+![Step 2 Pt 1](https://media.discordapp.net/attachments/965809568808575027/1004404511969914921/unknown.png)
 <h2> Then go down to GPU Memory and hit Enter</h2>
 
-![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004404864631189634/unknown.png)
+![Step 2 Pt 2](https://media.discordapp.net/attachments/965809568808575027/1004404864631189634/unknown.png)
 <h2> Then type in 128 and click Ok and reboot</h2>
 
-![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004418923766218782/unknown.png)
+![Step 2 Pt 3](https://media.discordapp.net/attachments/965809568808575027/1004418923766218782/unknown.png)
 
 <h2> Then proceed to install the required items with the code below </h2>
 
@@ -89,9 +98,6 @@ sudo apt install libxcb-shm0 libcdio-paranoia-dev libsdl2-2.0-0 libxv1 libtheora
 sudo pip3 install mediapipe-rpi4
 ```
 
-
-
-
 ## Hardware Used  
 - We are using raspberry pi as it uses Linux OS, which is open source, which makes users able to create their own software while still having great security as well as get codes from other sources and it can still be changed to the user's liking. Using Linux Os devices is also more cost efficient in both the hardware and software side as well as less maintenance cost as much as other OS Software. Raspberry Pi also has many component interfaces such as HDMI, Ethernet, Many GPIOs, and USB 2.0 and 3.0.
  
@@ -111,8 +117,6 @@ sudo pip3 install mediapipe-rpi4
 
 - Draw using your own hands
 -- Using a USB webcam, the user will be able to draw shapes or objects using the motion on their hands which will reflect back on the grid and creates a shape that will play a set of sound notes.
-
- 
 
 # Code
 
@@ -285,7 +289,6 @@ def Clear ():
         for j in range(col):
             toggle[i][j] = 0
             button[i][j].config(bg="lightgrey")
-    print("toggle is {}".format(toggle))
 ```
 
 Creates a clear function for the drawing page
@@ -316,12 +319,8 @@ def move(move_event):
     canvasy = int(prev.y/62)
     #y = width
     #x = height
-    print ("prevX is {} prevY is {}".format(prev.x,prev.y))
-    print ("moveX is {} moveY is {}".format(move_event.x,move_event.y))
-#     print("X is {} and Y is {}".format(canvasx,canvasy))
     h = [canvasy, canvasx]
     i = h[0]; j = h[1]
-    print("x is {} and y is {}".format(j,i))
     if toggle[i][j]== 0:
         toggle[i][j]=1
         button[i][j].config(bg="green")
@@ -360,9 +359,6 @@ def OpenCam():
             cy = t[1]
             cxp = cx
             cyp = cy
-            print("Flag is {}".format(flag))
-        print("x is {} and y is {}".format(x,y))
-        print("cx is {} and cy is {}".format(cx,cy))
         canvas.create_line(x,y,cx,cy,width=2)
         canvasx = int(x/152) 
         canvasy = int(y/62)
@@ -396,12 +392,6 @@ def OpenCam():
         else:
             return
 ```
-
-*start code*
-
-*pause code*
-
-*update code*
 
 Creates a preset for the users to replicate as fast as they can
 ```
@@ -633,5 +623,4 @@ start_button.grid(row = 8 , column = 18)
 
 pause_button = Button(frame1, text='stop', width =10, pady = 19, font=('Arial', 10),bg="red",fg="white"  , command=pause)
 pause_button.grid(row = 8 , column = 19)
-
 ```
