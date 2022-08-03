@@ -548,4 +548,8 @@ main.bind('<Up>',Lightup)
 main.bind('<Return>',lambda event:play())
 ```
 
+Setting the size of the tkinter pop up
+```
+main.geometry("1920x1080")
+```
 
