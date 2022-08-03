@@ -74,12 +74,14 @@ sudo apt-get install protobuf-compiler
 
 
 ## Hardware Used  
-We are using raspberry pi as it uses Linux OS, which is open source, which makes users able to create their own software while still having great security as well as get codes from other sources and it can still be changed to the user's liking. Using Linux Os devices is also more cost efficient in both the hardware and software side as well as less maintenance cost as much as other OS Software. Raspberry Pi also has many component interfaces such as HDMI, Ethernet, Many GPIOs, and USB 2.0 and 3.0.
+- We are using raspberry pi as it uses Linux OS, which is open source, which makes users able to create their own software while still having great security as well as get codes from other sources and it can still be changed to the user's liking. Using Linux Os devices is also more cost efficient in both the hardware and software side as well as less maintenance cost as much as other OS Software. Raspberry Pi also has many component interfaces such as HDMI, Ethernet, Many GPIOs, and USB 2.0 and 3.0.
  
-We  used a monitor for our display out and for the user to see what they are clicking on. And lastly a pair of speakers for the user to be able to hear the sounds that are playing from the notes they clicked on in the program on screen.
+- We  used a monitor for our display out and for the user to see what they are clicking on. And lastly a pair of speakers for the user to be able to hear the sounds that are playing from the notes they clicked on in the program on screen.
 
 ## Software used 
-The main coding platform we are using is Thonny Python IDE. Thonny is useful especially more towards beginners as it is a free integrated development environment. As compared to other coding languages as well as python 3, Thonny is a more suitable coding platform for learning. 
+- The main coding platform we are using is Thonny Python IDE. Thonny is useful especially more towards beginners as it is a free integrated development environment. As compared to other coding languages as well as python 3, Thonny is a more suitable coding platform for learning.
+
+ - For our camera feature, we are using OpenCv for hand tracking. OpenCV is an open source computer vision and machine learning software library. For our purpose, OpenCV is the best machine learning software as compared to other softwares such as tensorflow as OpenCV processes based on images and videos, while tensorflow builds machine learning models and is more used for deep learning applications.
 
 ## Features Added
 - Keyboard Mode
@@ -91,7 +93,7 @@ The main coding platform we are using is Thonny Python IDE. Thonny is useful esp
 - Draw using your own hands
 -- Using a USB webcam, the user will be able to draw shapes or objects using the motion on their hands which will reflect back on the grid and creates a shape that will play a set of sound notes.
 
-  -- This is done by using a software called Opencv, which is an open source computer vision and machine learning program.+
+ 
 
 # Code
 
@@ -408,8 +410,29 @@ def preset():
     for i in range(len(preset_row)):
         button[preset_row[i]][preset_col[i]].config(bg = "green")
 ```
-Gives the grid the number of rows and columns and gives each button its own X and Y value
+Creating the Tkinter pop up and making the window have 2 tabs, also set a to 0
 ```
+main = Tk()
+
+my_notebook = ttk.Notebook(main)
+my_notebook.grid()
+
+frame1 = Frame(my_notebook)
+frame2 = Frame(my_notebook)
+
+frame1.grid()
+frame2.grid()
+
+my_notebook.add(frame1, text="Keyboard Mode")
+my_notebook.add(frame2, text="Draw Mode")
+
+a=0
+```
+
+
+Gives the grid the number of rows and columns and gives each button its own X and Y value. 
+```
+
 row=15
 col=8
 
