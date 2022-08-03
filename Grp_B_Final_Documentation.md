@@ -573,3 +573,54 @@ binding the left click of the mouse and the move motion of the mouse to canvas
 canvas.bind('<Button-1>', click)
 canvas.bind('<B1-Motion>',move)
 ```
+
+Setting up the camera 
+
+```
+cap = cv2.VideoCapture(0)
+
+mpHands = mp.solutions.hands
+hands = mpHands.Hands(static_image_mode=False,
+                      max_num_hands=4,
+                      min_detection_confidence=0.5,
+                      min_tracking_confidence=0.5)
+mpDraw = mp.solutions.drawing_utils
+
+pTime = 0
+cTime = 0
+```
+Creating the OpenCam button on the tkinter GUI on the draw mode page
+```
+Opencam = Button(frame2, text= "OpenCam", command = OpenCam, width =10, pady = 19, bg="red",fg="white",font=("Arial",13))
+Opencam.grid(row=1, column=4)
+```
+Creating the Stopwatch time label on the keyboard page and the label for avg timing of other users
+```
+# label to display time
+stopwatch_label = Label(frame1,text='00:00:00', font=('Arial', 25))
+stopwatch_label.grid(row = 7 , column = 18)
+
+keyboardtiming_label = Label(frame1,text='Keyboard Avg:', font=('Arial', 15))
+keyboardtiming_label.grid(row = 5 , column = 18)
+
+mousetiming_label = Label(frame1,text='Mouse Avg:', font=('Arial', 15))
+mousetiming_label.grid(row = 5 , column = 19)
+
+keyboardtimingNo_label = Label(frame1,text='22', font=('Arial', 15))
+keyboardtimingNo_label.grid(row = 6 , column = 18)
+
+mousetimingNo_label = Label(frame1,text='18', font=('Arial', 15))
+mousetimingNo_label.grid(row = 6 , column = 19)
+
+TrackerStop_label = Label(frame2,text='LOOK HERE', font=('Arial', 15))
+TrackerStop_label.grid(row = 1 , column = 3)
+```
+The start and pause button for the stopwatch timer
+```
+start_button = Button(frame1, text='start', width =10, pady = 19, font=('Arial', 10),bg="green",fg="white", command=start)
+start_button.grid(row = 8 , column = 18)
+
+pause_button = Button(frame1, text='stop', width =10, pady = 19, font=('Arial', 10),bg="red",fg="white"  , command=pause)
+pause_button.grid(row = 8 , column = 19)
+
+```
