@@ -26,6 +26,14 @@ sudo raspi-config
 ![enter image description here]()
 Go down to Performance Options and hit Enter
 ![enter image description here]()
+## Hardware Used  
+We are using raspberry pi as it uses Linux OS, which is open source, which makes users able to create their own software while still having great security as well as get codes from other sources and it can still be changed to the user's liking. Using Linux Os devices is also more cost efficient in both the hardware and software side as well as less maintenance cost as much as other OS Software. Raspberry Pi also has many component interfaces such as HDMI, Ethernet, Many GPIOs, and USB 2.0 and 3.0.
+ 
+We  used a monitor for our display out and for the user to see what they are clicking on. And lastly a pair of speakers for the user to be able to hear the sounds that are playing from the notes they clicked on in the program on screen.
+
+For additional features, we have added a keyboard in order for having physical buttons that simulates the closeness of playing a piano. Another feature we added is a camera so that instead of using a mouse cursor to draw, the user will be able to draw with their hand and get results.
+
+
 # Code
 
 ```
