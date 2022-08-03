@@ -278,14 +278,14 @@ def Clearcanvas():
             toggle[i][j] = 0
             button[i][j].config(bg="lightgrey")
 ```
-*click code*
+
 On mouse left click get the X & Y coordinates
 ```
 def click(click_event):
     global prev
     prev = click_event
 ```
-*move code*
+
 As the mouse cursor moves get the X & Y coordinates of the mouse from click function and draw it out on the canvas 
 ```
 def move(move_event):
@@ -308,8 +308,6 @@ def move(move_event):
     else:
         toggle[i][j]=1
 ```
-*open cam code*
-
 
 This will  run the camera function and have it track the hands of the user for 5 seconds
 every 1 second there will be a sound played by the speakers to represent that the camera have taken a picture of your current location of user hands and input it as 1 X & Y coordinates repeated 5 times to draw 5 lines in a continuous line
