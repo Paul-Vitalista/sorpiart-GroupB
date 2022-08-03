@@ -64,8 +64,14 @@ sudo apt-get install gcc-arm*
 
 sudo apt-get install protobuf-compiler
 ```
-Step
-=======
+
+<h2>Step 3: Install OpenCV
+
+
+
+
+
+
 
 ## Hardware Used  
 We are using raspberry pi as it uses Linux OS, which is open source, which makes users able to create their own software while still having great security as well as get codes from other sources and it can still be changed to the user's liking. Using Linux Os devices is also more cost efficient in both the hardware and software side as well as less maintenance cost as much as other OS Software. Raspberry Pi also has many component interfaces such as HDMI, Ethernet, Many GPIOs, and USB 2.0 and 3.0.
