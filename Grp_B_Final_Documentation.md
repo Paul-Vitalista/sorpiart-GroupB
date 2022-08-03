@@ -25,15 +25,12 @@ sudo raspi-config
 ```
 ![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004404511969914921/unknown.png)
 Go down to Performance Options and hit Enter
-
 ![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004404864631189634/unknown.png)
 Then go down to GPU Memory and hit Enter
 ![enter image description here](https://media.discordapp.net/attachments/965809568808575027/1004418923766218782/unknown.png)
 Then type in 128 and click Ok and reboot
 =======
-![enter image description here]()
 
->>>>>>> fb57e3973f5e9b8a3a9ebcb16f459181ebf690e4
 ## Hardware Used  
 We are using raspberry pi as it uses Linux OS, which is open source, which makes users able to create their own software while still having great security as well as get codes from other sources and it can still be changed to the user's liking. Using Linux Os devices is also more cost efficient in both the hardware and software side as well as less maintenance cost as much as other OS Software. Raspberry Pi also has many component interfaces such as HDMI, Ethernet, Many GPIOs, and USB 2.0 and 3.0.
  
