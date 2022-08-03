@@ -26,13 +26,26 @@ sudo raspi-config
 ![enter image description here]()
 Go down to Performance Options and hit Enter
 ![enter image description here]()
+
 ## Hardware Used  
 We are using raspberry pi as it uses Linux OS, which is open source, which makes users able to create their own software while still having great security as well as get codes from other sources and it can still be changed to the user's liking. Using Linux Os devices is also more cost efficient in both the hardware and software side as well as less maintenance cost as much as other OS Software. Raspberry Pi also has many component interfaces such as HDMI, Ethernet, Many GPIOs, and USB 2.0 and 3.0.
  
 We  used a monitor for our display out and for the user to see what they are clicking on. And lastly a pair of speakers for the user to be able to hear the sounds that are playing from the notes they clicked on in the program on screen.
 
-For additional features, we have added a keyboard in order for having physical buttons that simulates the closeness of playing a piano. Another feature we added is a camera so that instead of using a mouse cursor to draw, the user will be able to draw with their hand and get results.
+## Software used 
+The main coding platform we are using is Thonny Python IDE. Thonny is useful especially more towards beginners as it is a free integrated development environment. As compared to other coding languages as well as python 3, Thonny is a more suitable coding platform for learning. 
 
+## Features Added
+- Keyboard Mode
+-- On the GUI, you will be able to use the keys 1 to 8 to press the different buttons on the GUI, there will be a yellow rectangle at the side to indicate which row would is active for the user to press on.
+
+- Canvas Mode
+-- There is another tab that will switch over to a canvas where the user will be able to use the mouse cursor and draw on it. The drawing will then be accurately represented back on the grid in order to play the sound that the drawing makes.
+
+- Draw using your own hands
+-- Using a USB webcam, the user will be able to draw shapes or objects using the motion on their hands which will reflect back on the grid and creates a shape that will play a set of sound notes.
+
+  -- This is done by using a software called Opencv, which is an open source computer vision and machine learning program.+
 
 # Code
 
