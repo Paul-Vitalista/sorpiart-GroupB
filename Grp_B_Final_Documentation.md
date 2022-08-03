@@ -232,10 +232,37 @@ def Clearcanvas():
             button[i][j].config(bg="lightgrey")
 ```
 *click code*
-
+On mouse left click get the X & Y coordinates
+```
+def click(click_event):
+    global prev
+    prev = click_event
+```
+*move code*
+As the mouse cursor moves get the X & Y coordinates of the mouse from click function and draw it out on the canvas 
+```
+def move(move_event):
+    global prev, toggle,button,row,col,a,cx,cy
+    canvas.create_line(prev.x, prev.y, move_event.x, move_event.y, width=2)
+    prev = move_event
+    canvasx = int(prev.x/152)
+    canvasy = int(prev.y/62)
+    #y = width
+    #x = height
+    print ("prevX is {} prevY is {}".format(prev.x,prev.y))
+    print ("moveX is {} moveY is {}".format(move_event.x,move_event.y))
+#     print("X is {} and Y is {}".format(canvasx,canvasy))
+    h = [canvasy, canvasx]
+    i = h[0]; j = h[1]
+    print("x is {} and y is {}".format(j,i))
+    if toggle[i][j]== 0:
+        toggle[i][j]=1
+        button[i][j].config(bg="green")
+    else:
+        toggle[i][j]=1
+```
 *open cam code*
 
-*move code*
 
 *start code*
 
