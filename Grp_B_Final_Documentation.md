@@ -428,7 +428,12 @@ my_notebook.add(frame2, text="Draw Mode")
 
 a=0
 ```
+Setting the timer into a not running state and hour minutes and seconds are set to 0
+```
+running = False
 
+hours, minutes, seconds = 0, 0, 0
+```
 
 Gives the grid the number of rows and columns and gives each button its own X and Y value. 
 ```
@@ -442,6 +447,12 @@ for i in range(row):
 for i in range(row):
     for j in range(col):
         toggle[i][j] = 0
+
+```
+
+A constant on state toggle for pix2music to call upon so that it will always play sound with out user inputs
+used for the sound produce when the camera is turn on
+```
 
 Beat = [i for i in range(1)]
 for i in range(1):
