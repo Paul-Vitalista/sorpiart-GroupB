@@ -72,7 +72,6 @@ sudo apt-get install protobuf-compiler
 
 
 
-
 ## Hardware Used  
 - We are using raspberry pi as it uses Linux OS, which is open source, which makes users able to create their own software while still having great security as well as get codes from other sources and it can still be changed to the user's liking. Using Linux Os devices is also more cost efficient in both the hardware and software side as well as less maintenance cost as much as other OS Software. Raspberry Pi also has many component interfaces such as HDMI, Ethernet, Many GPIOs, and USB 2.0 and 3.0.
  
@@ -279,14 +278,14 @@ def Clearcanvas():
             toggle[i][j] = 0
             button[i][j].config(bg="lightgrey")
 ```
-*click code*
+
 On mouse left click get the X & Y coordinates
 ```
 def click(click_event):
     global prev
     prev = click_event
 ```
-*move code*
+
 As the mouse cursor moves get the X & Y coordinates of the mouse from click function and draw it out on the canvas 
 ```
 def move(move_event):
@@ -309,8 +308,6 @@ def move(move_event):
     else:
         toggle[i][j]=1
 ```
-*open cam code*
-
 
 This will  run the camera function and have it track the hands of the user for 5 seconds
 every 1 second there will be a sound played by the speakers to represent that the camera have taken a picture of your current location of user hands and input it as 1 X & Y coordinates repeated 5 times to draw 5 lines in a continuous line
