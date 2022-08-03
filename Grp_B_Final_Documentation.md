@@ -310,9 +310,10 @@ Sound = OptionMenu(frame1, variable, *option)
 Sound.grid(row=2, column=19)
 ``` 
  Creating drop down menu for which pitch to start at
+```
 Note = OptionMenu(frame1, Notevariable, *Noteoption)
 Note.grid(row=2, column=18)
-```
+```	
 Creating button for activating the preset,  playing sound and clearing for both keyboard and draw modes
 ```	
 preset = Button(frame1, text = "NYP" ,command = preset, width =10, pady = 19, bg="green",fg="white",font=("Arial",13))
