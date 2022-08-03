@@ -553,3 +553,14 @@ Setting the size of the tkinter pop up
 main.geometry("1920x1080")
 ```
 
+Creating canvas size and position 
+```
+canvas = Canvas(frame2, width = col*150, height=row*60, bg='white')
+canvas.grid( row = 0 ,column=1)
+```
+
+binding the left click of the mouse and the move motion of the mouse to canvas
+```
+canvas.bind('<Button-1>', click)
+canvas.bind('<B1-Motion>',move)
+```
