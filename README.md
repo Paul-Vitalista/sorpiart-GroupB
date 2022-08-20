@@ -116,7 +116,7 @@ sudo pip3 install mediapipe-rpi4
 -- There is another tab that will switch over to a canvas where the user will be able to use the mouse cursor and draw on it. The drawing will then be accurately represented back on the grid in order to play the sound that the drawing makes.
 
 - Draw using your own hands
--- Using a USB webcam, the user will be able to draw shapes or objects using the motion on their hands which will reflect back on the grid and creates a shape that will play a set of sound notes.
+-- Using a USB webcam, the user will be able to draw shapes or objects using the motion on their hands which will reflect back on the grid and creates a shape that will play a set of sound notes.(work in progress)
 
 # Code
 
